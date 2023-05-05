@@ -1,4 +1,4 @@
-// union type
+// union type-----------------------------------------
 type NoobDeveloper = {
   name: string;
 };
@@ -15,7 +15,7 @@ const newDeveloper: NoobDeveloper | JuniorDeveloper = {
   experience: 1,
 };
 
-//intersection type
+//intersection type--------------------------------------
 type JuniorDeveloperIntersection = NoobDeveloper & {
   expertise: string;
   experience: number;
