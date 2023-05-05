@@ -6,7 +6,7 @@ const searchName = (value: string | null) => {
     console.log("searching...");
   }
 };
-// searchName(null);
+searchName(null);
 
 //unknown
 const getMyCarSpeed = (speed: unknown) => {
@@ -18,12 +18,12 @@ const getMyCarSpeed = (speed: unknown) => {
     console.log((parseFloat(value[0]) * 1000) / 3600);
   }
 };
-// getMyCarSpeed(10);
-// getMyCarSpeed("10 kmh^-1");
+getMyCarSpeed(10);
+getMyCarSpeed("10 kmh^-1");
 
 //never
 const thowError = (message: string): never => {
   //if we know the function will never return anything like this you can use never type;
   throw new Error(message);
 };
-thowError("error hoice");
+// thowError("error hoice");
