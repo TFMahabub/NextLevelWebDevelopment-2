@@ -1,12 +1,16 @@
 type User = {
-  name: string;
+  name: "mahabub" | "salman"; //litarel type
   age: number;
   isMarried: boolean;
-  wife?: string;
+  readonly profession: string; //this value you can't change
+  wife?: string; //optional type
 };
 
 const user: User = {
-  name: "mahabub",
+  name: "salman",
   age: 24,
   isMarried: false,
+  profession: "programmer",
 };
+
+// user.profession = "web developer" // we can't change this value cause of readonly option
