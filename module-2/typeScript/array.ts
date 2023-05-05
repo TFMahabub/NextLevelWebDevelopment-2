@@ -17,4 +17,4 @@ rollNumber.map((num) => num.toString);
 //tupple type:
 const user: [number, string] = [12, "mahabub"];
 
-// move to another repo00000000000000000
+// move to another repo
