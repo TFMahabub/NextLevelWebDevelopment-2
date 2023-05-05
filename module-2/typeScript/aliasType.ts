@@ -23,8 +23,8 @@ const crush3: Crush = {
   address: "dhaka",
 };
 
+//function type in a function as a parameter
 type Oparation = (x: number, y: number) => number;
-
 const calculate = (n1: number, n2: number, oparation: Oparation) => {
   return oparation(n1, n2);
 };
