@@ -8,10 +8,14 @@ const userNameAndRollNum: Array<{ name: string; roll: number }> = [
   { name: "mahabub", roll: 5 },
 ];
 const rollNumber: genericArray<number> = [1, 2, 3, 4]; //one type of value with generic type
+interface RollNumberBooleanType {
+  name: string;
+  roll: number;
+}
 const rollNumberBoolean: genericArrayTupple<
   //two type of value with generic type
   boolean,
-  { name: string; roll: number }
+  RollNumberBooleanType
 > = [true, { name: "m", roll: 5 }];
 const genericType: genericArrayTripple<string, number, boolean> = [
   //three type of value with generic type
