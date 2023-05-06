@@ -50,5 +50,5 @@ interface RollNumber {
 //type at array type
 type RollNumberType = string[]; //most of the time we use type alias for array;
 
-const rollNumber: RollNumberType = ["s", "t", "r"];
-rollNumber.map((pro, i) => console.log(typeof pro));
+// const rollNumber: RollNumberType = ["s", "t", "r"];
+// rollNumber.map((pro, i) => console.log(typeof pro));
