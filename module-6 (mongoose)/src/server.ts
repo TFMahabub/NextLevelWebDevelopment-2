@@ -1,8 +1,7 @@
-const express = require("express");
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import app from "./app";
 
-const app = express();
-const port = 5000;
+const port: number = 5000;
 
 //database connection-
 async function connection() {
@@ -10,17 +9,12 @@ async function connection() {
 
   try {
     console.log(`database connection successfull at ${port}`);
+    app.listen(port, () => {
+      console.log(`Server is listening on port ${port}`);
+    });
   } catch (err) {
     console.error("Failed to connecte database");
   }
 }
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});
 
 connection();
