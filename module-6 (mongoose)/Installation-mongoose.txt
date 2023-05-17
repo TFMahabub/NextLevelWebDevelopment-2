@@ -1,0 +1,28 @@
+1. Download mongodb community server and install- it's basically used your computer for local mongodb server.
+
+2. Next Download and Install MongoDB compass.
+
+3. Create a package.json file.
+
+4. Install typeScript as a -dev dependencies. command===yarn add typescript --dev
+
+5. Install Express.js as a dependencies. command===yarn add express --save. 
+
+6. Install mongoose.js as a dependencies. command===yarn add mongoose --save
+
+7. Install ts-node-dev as a -dev dependencies. command===yarn add ts-node-dev. and set the scripts at package.json file-
+
+"scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+  },
+
+8. Then copy the code to quick start from express.js also copy quick start code from mongoose- 
+
+// getting-started.js
+const mongoose = require('mongoose');
+
+async function main() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+}
