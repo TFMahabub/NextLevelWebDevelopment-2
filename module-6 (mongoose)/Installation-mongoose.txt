@@ -4,13 +4,13 @@
 
 3. Create a package.json file.
 
-4. Install typeScript as a -dev dependencies. command===yarn add typescript --dev
+4. Install typeScript as a -dev dependencies. command=== yarn add typescript --dev
 
-5. Install Express.js as a dependencies. command===yarn add express --save. 
+5. Install Express.js as a dependencies. command=== yarn add express --save. 
 
-6. Install mongoose.js as a dependencies. command===yarn add mongoose --save
+6. Install mongoose.js as a dependencies. command=== yarn add mongoose --save
 
-7. Install ts-node-dev as a -dev dependencies. command===yarn add ts-node-dev. and set the scripts at package.json file-
+7. Install ts-node-dev as a -dev dependencies. command=== yarn add ts-node-dev. and set the scripts at package.json file-
 
 "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
@@ -26,3 +26,9 @@ async function main() {
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
+
+9. Install cors as a dependencies. command=== yarn add cors
+
+10. Then set the folder structure. and install type of cors, express etc. like this:-
+-yarn add @types/express
+-yarn add @types/cors
