@@ -1,12 +1,7 @@
 import cors from "cors";
 import express from "express";
-import {
-  Application,
-  NextFunction,
-  Request,
-  Response,
-} from "express-serve-static-core";
-import { Schema } from "mongoose";
+import { Application, Request, Response } from "express-serve-static-core";
+import { Schema, model } from "mongoose";
 
 const app: Application = express();
 
@@ -17,12 +12,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
+app.get("/createUser", (req: Request, res: Response) => {
   //   res.send("Hello World!");
   //   next();
 
   // 1. Create an interface representing a document in MongoDB.
-  interface IUser<userSchema> {
+  interface IUser {
     id: string;
     role: "student";
     password: string;
@@ -94,6 +89,31 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
       required: true,
     },
   });
+
+  // 3. Create a Model.
+  const User = model<IUser>("User", userSchema);
+
+  const createUserDB = async () => {
+    const user = new User({
+      id: "05",
+      role: "student",
+      password: "1234455",
+      name: {
+        firstName: "mahabub",
+        lastName: "alam",
+      },
+      dateOfBirth: "14/01/1999",
+      gender: "male",
+      email: "rjmahabub543@gmail.com",
+      contactNo: "01636725669",
+      emergencyContactNumber: "01868291303",
+      permanentAddress: "Nawabgonj, Dhaka",
+    });
+
+    await user.save();
+    res.send(user);
+  };
+  createUserDB();
 });
 
 export default app;
