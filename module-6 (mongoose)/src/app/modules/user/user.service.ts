@@ -5,7 +5,7 @@ export const createUserDB = async (payload: IUser) => {
   const user = new userSchemaModel(payload); //user => class user
 
   await user.save(); //instance methods => custom instance methods
-  console.log(user.fullName());
+  console.log(user.fullName()); //this function will make the custom method quiry
 
   return user;
 };
@@ -26,4 +26,9 @@ export const getUserByIdFromDB = async (
     }
   );
   return user;
+};
+
+export const getAdminUsersFromDB = async () => {
+  const admins = await userSchemaModel.getAdminUsers();
+  return admins;
 };

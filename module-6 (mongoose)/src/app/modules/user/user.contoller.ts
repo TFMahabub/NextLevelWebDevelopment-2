@@ -1,5 +1,10 @@
 import { Request, Response } from "express-serve-static-core";
-import { createUserDB, getUserByIdFromDB, getUserFromDB } from "./user.service";
+import {
+  createUserDB,
+  getAdminUsersFromDB,
+  getUserByIdFromDB,
+  getUserFromDB,
+} from "./user.service";
 
 export const createUserController = async (req: Request, res: Response) => {
   const user = await createUserDB(req.body);
@@ -26,5 +31,14 @@ export const getuserById = async (req: Request, res: Response) => {
   res.status(200).json({
     status: "success",
     data: user,
+  });
+};
+
+export const getAdminUsers = async (req: Request, res: Response) => {
+  const admins = await getAdminUsersFromDB();
+
+  res.status(200).json({
+    status: "success",
+    data: admins,
   });
 };
