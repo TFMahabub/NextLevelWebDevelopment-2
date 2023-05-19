@@ -2,9 +2,11 @@ import { IUser } from "./user.interface";
 import userSchemaModel from "./user.model.schema";
 
 export const createUserDB = async (payload: IUser) => {
-  const user = new userSchemaModel(payload);
+  const user = new userSchemaModel(payload); //user => class user
 
-  await user.save();
+  await user.save(); //instance methods => custom instance methods
+  console.log(user.fullName());
+
   return user;
 };
 
@@ -19,8 +21,8 @@ export const getUserByIdFromDB = async (
   const user = await userSchemaModel.findOne(
     { id: payload },
     {
-      name: 1,
-      role: 1,
+      name: 1, //this object used to get the specific property you want
+      role: 1, //this object used to get the specific property you want
     }
   );
   return user;
